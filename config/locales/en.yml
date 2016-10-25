@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello"
   alt: "rss feed"
   application:
     title: "E-Learning"
@@ -43,7 +43,6 @@ en:
       mathematicians, scientists, and engineers."
     category: "Logic"
     invalid_value: "Invalid email/password combination"
-    follow: "Follow"
   new_user:
     signup: "Sign Up"
     success: "Success!"
@@ -54,6 +53,9 @@ en:
     follow: "Follow"
     follower: "Follower"
     followed: "Followed"
+    unfollow: "Unfollow"
+    following: "following"
+    followers: "followers"
   form:
     name: "Name"
     email: "Email Address"

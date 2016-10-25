@@ -1,49 +1,59 @@
 <div class="row">
   <section class="content">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="table-container">
-            <table class="table table-filter">
-              <tbody>
-                <% @users.each do |user| %>
-                <tr data-status="pendiente">
-                  <td>
-                    <div class="media card">
-                      <div class="pull-left avatar">
-                        <%= gravatar_for user, size: 100 %>
-                      </div>
-                      <div class="media-body">
-                        <span class="media-meta pull-right">
-                          <%= l user.created_at,
-                            format: t("formats.short") %>
-                        </span>
-                        <h4 class="title">
-                          <%= link_to user.name, user %>
-                        </h4>
-                        <p class="summary"><%= t "index.description" %></p>
-                        <% unless current_user.is_user?(user) %>
-                          <div class="btn-toolbar demoPadder" role="toolbar">
-                            <button type="button"
-                              class="btn btn-default btn-lg">
-                              <span class="glyphicon glyphicon-star"
-                                aria-hidden="true"></span>
-                                <%= t "index.follow" %>
-                            </button>
-                          </div>
-                        <% end %>
+          <section class="comment-list">
+            <% @users.each do |user| %>
+              <article class="row">
+                <div class="col-md-2 col-sm-2 hidden-xs">
+                  <figure class="thumbnail">
+                    <%= gravatar_for user, size: 100 %>
+                    <figcaption class="text-center">
+                      <%= link_to user.name, user %>
+                      <br />
+                      <strong class="tiptext">
+                        <%= link_to user.following.count,
+                          following_user_path(user) %>
+                        <div class="description">
+                          <%= t "user_infor.following" %>
+                        </div>
+                      </strong>
+                      <strong class="tiptext">
+                        <%= link_to user.followers.count,
+                          followers_user_path(user) %>
+                        <div class="description">
+                          <%= t "user_infor.followers" %>
+                        </div>
+                      </strong>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-10 col-sm-10">
+                  <div class="panel panel-default arrow left">
+                    <div class="panel-body">
+                      <header class="text-left">
+                        <div class="comment-user"><i class="fa fa-user"></i>
+                          <%= t "hello" %>
+                        </div>
+                        <time class="comment-date" datetime="16-12-2014 01:05">
+                        <i class="fa fa-clock-o"></i>
+                          <%= l user.created_at, format: t("formats.short") %>
+                        </time>
+                      </header>
+                      <div class="comment-post">
+                        <span lass="summary"><%= t "index.description" %></span>
                       </div>
                     </div>
-                  </td>
-                </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
+                  </div>
+                </div>
+              </article>
+            <% end %>
+          </section>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </div>
 <%= will_paginate %>
 
