@@ -1,3 +1,13 @@
+.tiptext {
+  width:100px;
+  padding: 10px;
+}
+.description {
+  display:none;
+  position:absolute;
+  padding :5px;
+  width: 100%;
+}
 hr.separetor {
   width: 80px;
   color: #363942;
@@ -468,6 +478,11 @@ container .form_edit form input .send {
   display: block;
   margin: 0;
   padding: 33px 0 0;
+}
+.container .bottom form {
+  margin: 0 auto;
+  padding: 24px 0 0;
+  width: 115px;
 }
 .container form {
   margin: 0 auto;

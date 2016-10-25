@@ -11,24 +11,9 @@
         <div class="title">
           <%= link_to current_user.name, "#" %>
         </div>
-        <div class="desc">
-          <%= t "user_infor.followed" %>
-          </br>
-          <strong><%= link_to t("count"), "#" %></strong>
-        </div>
-        <div class="desc">
-          <%= t "user_infor.follower" %>
-          <br />
-          <strong><%= link_to t("count"), "#" %></strong>
-        </div>
+        <%= render "shared/stats" %>
       </div>
       <div class="clear"></div>
-      <div class="bottom">
-        <span class="btn btn-success btn-lg">
-          <i class="glyphicon glyphicon-ok"></i>
-          <%= t "user_infor.follow" %>
-        </span>
-      </div>
     </div>
   </div>
 </div>

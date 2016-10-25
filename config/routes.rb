@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
-  resources :users, expect: :destroy
   resources :suggest_questions
+  resources :users, expect: [:destroy] do
+    member do
+      get :following, :followers
+    end
+  end
   namespace :admin do
     root "home#index", as: "root"
     resources :categories
@@ -15,4 +19,5 @@ Rails.application.routes.draw do
     resources :answers
     resources :users
   end
+  resources :relationships, only: [:create, :destroy]
 end
