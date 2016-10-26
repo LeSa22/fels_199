@@ -3,13 +3,13 @@
   <%= t "user_infor.followed" %>
   </br>
   <strong>
-    <%= link_to @user.following.count, following_user_path(@user) %>
+    <%= link_to @user.following.count, user_following_index_path(@user) %>
   </strong>
 </div>
 <div class="desc">
   <%= t "user_infor.follower" %>
   <br />
   <strong>
-    <%= link_to @user.followers.count, followers_user_path(@user) %>
+    <%= link_to @user.followers.count, user_followers_path(@user) %>
   </strong>
 </div>

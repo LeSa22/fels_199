@@ -4,13 +4,10 @@ class RelationshipsController < ApplicationController
   def create
     user = User.find_by id: params[:followed_id]
     if user.nil?
+      flash[:danger] = t "new_user.danger"
       redirect_to root_url
     else
       current_user.follow user
-      respond_to do |format|
-        format.html { redirect_to @user }
-        format.js
-      end
       redirect_to user
     end
   end
@@ -18,13 +15,10 @@ class RelationshipsController < ApplicationController
   def destroy
     user = (Relationship.find_by id: params[:id]).followed
     if user.nil?
+      flash[:danger] = t "new_user.danger"
       redirect_to root_url
     else
       current_user.unfollow user
-      respond_to do |format|
-        format.html { redirect_to @user }
-        format.js
-      end
       redirect_to user
     end
   end

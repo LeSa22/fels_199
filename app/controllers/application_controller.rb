@@ -19,4 +19,12 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    unless @user
+      flash[:danger] = t "new_user.danger"
+      redirect_to root_url
+    end
+  end
 end
