@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @activities = @user.activities.recent
   end
 
   def edit

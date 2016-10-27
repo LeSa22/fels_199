@@ -18,7 +18,6 @@ class User < ApplicationRecord
   enum role: [:user, :admin]
   mount_uploader :avatar, PictureUploader
   scope :recent, ->{order created_at: :desc}
-  scope :recent, ->{order name: :desc}
 
   def is_user? user
     self == user

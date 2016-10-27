@@ -1,0 +1,9 @@
+<div class="row">
+  <% @categories.each do |category| %>
+    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
+      <%= image_tag "s4.png", alt: t("alt") %>
+      <h4><%= category.name %></h4>
+      <p><%= t "index.category" %></p>
+    </div>
+  <% end %>
+  </div>

@@ -14,14 +14,14 @@
                       <br />
                       <strong class="tiptext">
                         <%= link_to user.following.count,
-                          following_user_path(user) %>
+                          user_following_index_path(user) %>
                         <div class="description">
                           <%= t "user_infor.following" %>
                         </div>
                       </strong>
                       <strong class="tiptext">
                         <%= link_to user.followers.count,
-                          followers_user_path(user) %>
+                          user_followers_path(user) %>
                         <div class="description">
                           <%= t "user_infor.followers" %>
                         </div>

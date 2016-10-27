@@ -174,6 +174,7 @@ en:
   count: "14"
   formats:
     long: "%B %e, %Y, %I:%M %p"
+    toolong: "%B %e, %Y, %I:%M:%S %p "
     short: "%b %d, %Y"
   user_admin:
     avatar: "avatar"
@@ -205,3 +206,19 @@ en:
   status:
     success: "success"
     warning: "warning"
+exams:
+    index:
+      start_button: "Start"
+      view_button: "View"
+      created_date: "Created Date"
+      subject_name: "Subject's name"
+      status: "Status"
+      duration: "Duration"
+      question_number: "Question number"
+      spent_time: "Spent Time"
+      score: "Score"
+      action: "Action"
+      create_button: "Create Exam"
+      exam_list: "List Examination"
+      title: "Exams"
+

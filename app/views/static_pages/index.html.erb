@@ -1,12 +1,10 @@
 <% if logged_in? %>
   <%= render "shared/user_infor" %>
+  <h2>Challenge your intelligence</h2>
   <hr class="separetor">
-  <div class="row">
-    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
-      <%= image_tag "s1.png", alt: t("alt") %>
-      <h4><%= t "index.category" %></h4>
-      <p><%= t "index.category" %></p>
-    </div>
+  <%= t "wellcome" %>
+  <div id="services">
+    <%= link_to t("start"), exams_path, class: "getstart" %>
   </div>
 <% else %>
   <div id="featured">
@@ -19,16 +17,36 @@
     </div>
   </div>
   <div id="services">
-    <div class="sectionhead  row wow fadeInUp">
-      <span class="bigicon icon-cup "></span>
+    <div class="sectionhead row wow fadeInUp">
+      <h3>Lession</h3>
+           <h4>Expedita nobis natus doloribus blanditiis quos, atque voluptatem, veritatis soluta eveniet ea!</h4>
       <hr class="separetor">
     </div>
-    <div class="row">
-      <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
-        <%= image_tag "s1.png", alt: t("alt") %>
-        <h4><%= t "index.category" %></h4>
-        <p><%= t "index.category" %></p>
-      </div>
-    </div>
   </div>
+  <div id="testimonials" class="container">
+        <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+           <span class="bigicon icon-bubbles"></span>
+           <h3>This is what I love to listen</h3>
+           <h4>Expedita nobis natus doloribus blanditiis quos, atque voluptatem, veritatis soluta eveniet ea!</h4>
+           <hr class="separetor">
+        </div><!-- TESTIMONIAL SECTIONHEAD END -->
+
+        <!-- TESTIMONIAL ITEMS START -->
+        <div class="row">
+            <!-- 1ST TESTIMONIAL ITEM -->
+            <div class="col-md-6 wow bounceIn" data-wow-duration="2s">
+                <div class="clientsphoto">
+                    <%= image_tag "dan.jpg", alt: t("alt") %>
+                </div>
+
+                <div class="quote">
+                    <blockquote>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia et pariatur ipsam tempora officia ea iusto expedita, nulla, hic odit saepe repellat nesciunt dolorum, officiis laborum ad, aliquam. Quos, et.</p>
+                    </blockquote>
+                    <h5>Dan Cederholm</h5>
+                </div>
+            </div><!-- 1ST TESTIMONIAL ITEM END -->
+        </div>
+
+    </div><!-- TESTIMONIAL SECTION END -->
 <% end %>

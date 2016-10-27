@@ -30,4 +30,37 @@ module ApplicationHelper
       image_tag "logo.png", class: class_image
     end
   end
+
+  def show_status_exam exam
+    case
+    when exam.checked?
+      t "status.danger"
+    when exam.uncheck?
+      t "status.info"
+    when exam.testing?
+      t "status.warning"
+    else
+      t "status.success"
+    end
+  end
+
+def name_tagert target_type
+    case target_type
+    when 0
+      user = User.find_by id: target_id
+      user ? user.name : ""
+    when 1
+      user = User.find_by id: target_id
+      user ? user.name : ""
+    end
+  end
+
+  def name_action action_type
+    case action_type
+    when 0
+      "Follow"
+    when 1
+      "Unfollow"
+    end
+  end
 end

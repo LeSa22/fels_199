@@ -19,4 +19,23 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def load_categories
+    @categories = Category.all
+  end
+
+  def create_user_follow_activity current_user, user
+    action_type = Settings.activity.action_type.follow
+    current_user.activities.create target_type:
+      Settings.activity.target_type.create_relationship,
+      target_id: user.id, action_type: action_type
+  end
+
+  def create_user_unfollow_activity current_user, user
+    action_type = Settings.activity.action_type.unfollow
+    current_user.activities.create target_type:
+      Settings.activity.target_type.destroy_relationship,
+      target_id: user.id, action_type: action_type
+  end
+
 end

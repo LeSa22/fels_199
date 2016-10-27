@@ -3,3 +3,14 @@ per_page: 10
 per_page_users: 3
 multiple: 0
 single: 1
+activity:
+  target_type:
+    create_relationship: 0
+    destroy_relationship: 1
+    update_account: 2
+    exam: 3
+  action_type:
+    follow: 0
+    unfollow: 1
+    update: 2
+    create_exam: 3

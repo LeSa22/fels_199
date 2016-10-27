@@ -6,4 +6,8 @@ class Category < ApplicationRecord
   validates :name, presence: true, length: {minimum: 5}
 
   scope :recent, ->{order name: :asc}
+
+  def random_question
+    self.questions.random
+  end
 end
